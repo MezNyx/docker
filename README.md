@@ -8,4 +8,4 @@ up to date.
 
 ## Notice
 I no longer use "master" in any of my repositories so you will be pulling off "main"
-as the default. I highly suggest getting used to main in general.
+as the default.
