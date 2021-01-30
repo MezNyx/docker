@@ -25,8 +25,8 @@ RUN addgroup --system bastion && \
 ENV KUBECTX_VERSION=v0.9.1
 ENV KUBENS_VERSION=v0.9.1
 RUN set -x; cd "$(mktemp -d)" && \
-    wget https://github.com/ahmetb/kubectx/releases/download/${KUBECTX_VERSION}/kubectx_${KUBECTX_VERSION}_linux_x86_64.tar.gz && \
-    wget https://github.com/ahmetb/kubectx/releases/download/${KUBENS_VERSION}/kubens_${KUBENS_VERSION}_linux_x86_64.tar.gz && \
+    wget -q https://github.com/ahmetb/kubectx/releases/download/${KUBECTX_VERSION}/kubectx_${KUBECTX_VERSION}_linux_x86_64.tar.gz && \
+    wget -q https://github.com/ahmetb/kubectx/releases/download/${KUBENS_VERSION}/kubens_${KUBENS_VERSION}_linux_x86_64.tar.gz && \
     tar zxvf kubectx_${KUBECTX_VERSION}_linux_x86_64.tar.gz && \
     tar zxvf kubens_${KUBENS_VERSION}_linux_x86_64.tar.gz && \
     mv kubens kubectx /usr/bin
@@ -34,7 +34,7 @@ RUN set -x; cd "$(mktemp -d)" && \
 # Install k9s
 ENV K9S_VERSION=v0.24.2
 RUN set -x; cd "$(mktemp -d)" && \
-    wget https://github.com/derailed/k9s/releases/download/v0.24.2/k9s_Linux_x86_64.tar.gz && \
+    wget -q https://github.com/derailed/k9s/releases/download/v0.24.2/k9s_Linux_x86_64.tar.gz && \
     tar zxvf k9s_Linux_x86_64.tar.gz && \
     mv k9s /usr/bin
 
