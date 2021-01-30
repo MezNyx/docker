@@ -1,0 +1,66 @@
+{
+  "builders": [
+    {
+      "changes": [
+        "USER bastion",
+        "WORKDIR /workspace",
+        "ENV HOSTNAME bastion",
+        "LABEL version=1.0",
+        "ONBUILD RUN date"
+      ],
+      "commit": "true",
+      "image": "ubuntu:20.04",
+      "pull": "true",
+      "type": "docker"
+    }
+  ],
+  "post-processors": [
+    [
+      {
+        "repository": "meznyx/bastion",
+        "tags": [
+          "0.1"
+        ],
+        "type": "docker-tag"
+      },
+      "docker-push"
+    ],
+    [
+      {
+        "repository": "meznyx/bastion",
+        "tags": [
+          "latest"
+        ],
+        "type": "docker-tag"
+      },
+      "docker-push"
+    ]
+  ],
+  "provisioners": [
+    {
+      "script": "scripts/initial-setup.sh",
+      "type": "shell"
+    },
+    {
+      "script": "scripts/install-helm.sh",
+      "type": "shell"
+    },
+    {
+      "script": "scripts/install-google-cloud-sdk.sh",
+      "type": "shell"
+    },
+    {
+      "script": "scripts/install-kubernetes-toys.sh",
+      "type": "shell"
+    },
+    {
+      "script": "scripts/install-awscli.sh",
+      "type": "shell"
+    },
+    {
+      "script": "scripts/setup-user.sh",
+      "type": "shell"
+    }
+  ]
+}
+
