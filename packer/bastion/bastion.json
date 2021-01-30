@@ -50,6 +50,10 @@
       "type": "shell"
     },
     {
+      "script": "scripts/install-eks-tools.sh",
+      "type": "shell"
+    },
+    {
       "script": "scripts/install-kubernetes-toys.sh",
       "type": "shell"
     },
