@@ -6,7 +6,7 @@ if [ ! -d /workspace/.aws ]; then
   while true; do
     read -p "Do you want to configure awscli?" yn
     case $yn in
-      [Yy]* ) awscli configure; break;;
+      [Yy]* ) aws configure; break;;
       [Nn]* ) break;;
       * ) echo "Please answer Y/y/N/n";;
     esac
