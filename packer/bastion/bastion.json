@@ -64,6 +64,16 @@
     {
       "script": "scripts/setup-user.sh",
       "type": "shell"
+    },
+    {
+      "source": "files/configure.sh",
+      "type": "file",
+      "destination": "/workspace/.configure.sh"
+    },
+    {
+      "source": "files/bashrc",
+      "type": "file",
+      "destination": "/workspace/.bashrc"
     }
   ]
 }
