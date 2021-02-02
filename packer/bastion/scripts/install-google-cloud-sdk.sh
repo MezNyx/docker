@@ -8,6 +8,6 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 apt-get update && \
 apt-get install -yq \
   google-cloud-sdk \
-  kubernetes \
+  kubectl \
   google-cloud-sdk-kubectl-oidc && \
 apt-get clean
