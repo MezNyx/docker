@@ -8,4 +8,5 @@ apt-get install -yq \
   apt-transport-https \
   ca-certificates \
   gnupg && \
+  vim-tiny && \
 apt-get clean
