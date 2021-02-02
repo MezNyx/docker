@@ -25,17 +25,6 @@
       },
       "docker-push"
     ],
-    [
-      {
-        "repository": "meznyx/bastion",
-        "tags": [
-          "latest"
-        ],
-        "type": "docker-tag"
-      },
-      "docker-push"
-    ]
-  ],
   "provisioners": [
     {
       "script": "scripts/initial-setup.sh",
