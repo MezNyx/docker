@@ -19,7 +19,7 @@
       {
         "repository": "meznyx/bastion",
         "tags": [
-          "325.0.0-alpine",
+          "0.1.1",
           "alpine"
         ],
         "type": "docker-tag"
