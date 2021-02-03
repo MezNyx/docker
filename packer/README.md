@@ -2,4 +2,4 @@
 
   * Bastion
     * Alpine based
-    * Ubuntu based
+    * DEPRECATED Ubuntu Based
