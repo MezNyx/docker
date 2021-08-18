@@ -2,8 +2,9 @@
 
 # Run inital apt-get update and some base packages
 apt-get update
-apt-get install -yq \
+DEBIAN_FRONTEND=noninteractive apt-get install -yq \
   wget \
+  unzip \
   curl \
   apt-transport-https \
   ca-certificates \

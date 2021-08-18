@@ -8,7 +8,7 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /
 
 # Install the software
 apt-get update
-apt-get install -yq \
+DEBIAN_FRONTEND=noninteractive apt-get install -yq \
   google-cloud-sdk \
   kubectl
 apt-get clean

@@ -7,7 +7,8 @@ source "docker" "bastion" {
     "WORKDIR /workspace",
     "ENV HOSTNAME bastion",
     "LABEL version=1.1",
-    "ONBUILD RUN date"
+    "ONBUILD RUN date",
+    "ENTRYPOINT /bin/bash"
   ]
 }
 
@@ -22,6 +23,9 @@ build {
   }
   provisioner "shell" {
     script = "scripts/install-google-cloud-sdk.sh"
+  }
+  provisioner "shell" {
+    script = "scripts/install-kubernetes-toys.sh"
   }
   provisioner "shell" {
     script = "scripts/install-eks-tools.sh"
@@ -45,7 +49,7 @@ build {
       repository = "meznyx/bastion"
       tags = ["0.1.3", "latest"]
     }
-    post-processor "docker-push" {}
+    # post-processor "docker-push" {}
   
   }
 }

@@ -6,5 +6,5 @@ echo "deb https://baltocdn.com/helm/stable/debian/ all main" | tee /etc/apt/sour
 
 # Install helm package
 apt-get update
-apt-get install -yq helm
+DEBIAN_FRONTEND=noninteractive apt-get install -yq helm
 apt-get clean
