@@ -1,9 +1,0 @@
-# Script to configure awscli and provision helm charts
-source /workspace/.configure.sh
-
-# Gimme a prompt
-if [ -z "$PS1" ]; then
-   return
-fi
-
-PS1='\h:\W \u\$ '
