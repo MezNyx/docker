@@ -47,9 +47,9 @@ build {
   post-processors {
     post-processor "docker-tag" {
       repository = "meznyx/bastion"
-      tags = ["0.1.3", "latest"]
+      tags = ["1.0-ubuntu", "ubuntu",  "latest"]
     }
-    # post-processor "docker-push" {}
+    post-processor "docker-push" {}
   
   }
 }
