@@ -6,7 +6,7 @@ source "docker" "bastion" {
     "USER bastion",
     "WORKDIR /workspace",
     "ENV HOSTNAME bastion",
-    "LABEL version=1.0",
+    "LABEL version=1.1",
     "ONBUILD RUN date",
     "ENTRYPOINT [\"/bin/bash\"]"
   ]
@@ -39,6 +39,9 @@ build {
   provisioner "file" {
     source = "files/configure.sh"
     destination = "/workspace/configure.sh"
+  }
+  provisioner "shell" {
+    inline = ["chown bastion:bastion /workspace/configure.sh", "chmod +x /workspace/configure.sh"]
   }
   post-processors {
     post-processor "docker-tag" {

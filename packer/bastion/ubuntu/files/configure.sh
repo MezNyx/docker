@@ -17,6 +17,7 @@ fi
 if [ ! -d /workspace/.config/gcloud ]; then
   echo "Logging in to Google Cloud"
   gcloud auth login
+fi
 
 # Set up Helm
 if [ ! -d /workspace/.cache/helm/repository ]; then

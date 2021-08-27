@@ -40,6 +40,9 @@ build {
     source = "files/configure.sh"
     destination = "/workspace/configure.sh"
   }
+  provisioner "shell" {
+    inline = ["chown bastion:bastion /workspace/configure.sh", "chmod +x /workspace/configure.sh"]
+  }
   post-processors {
     post-processor "docker-tag" {
       repository = "meznyx/bastion"
