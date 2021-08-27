@@ -8,7 +8,7 @@ source "docker" "bastion" {
     "ENV HOSTNAME bastion",
     "LABEL version=1.0",
     "ONBUILD RUN date",
-    "ENTRYPOINT /bin/bash"
+    "ENTRYPOINT [\"/bin/bash\"]"
   ]
 }
 
@@ -38,11 +38,7 @@ build {
   }
   provisioner "file" {
     source = "files/configure.sh"
-    destination = "/workspace/.configure.sh"
-  }
-  provisioner "file" {
-    source = "files/bashrc"
-    destination = "/workspace/.bashrc"
+    destination = "/workspace/configure.sh"
   }
   post-processors {
     post-processor "docker-tag" {

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Set up the environment
+# Set up AWS
 if [ ! -d /workspace/.aws ]; then
   # yes/no if you want to set up aws
   while true; do
@@ -12,6 +12,11 @@ if [ ! -d /workspace/.aws ]; then
     esac
   done
 fi
+
+# Log into Google Cloud
+if [ ! -d /workspace/.config/gcloud ]; then
+  echo "Logging in to Google Cloud"
+  gcloud auth login
 
 # Set up Helm
 if [ ! -d /workspace/.cache/helm/repository ]; then
