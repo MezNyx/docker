@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Install kubectx and kubens
-KUBECTX_VERSION=v0.9.1
-KUBENS_VERSION=v0.9.1
+KUBECTX_VERSION=v0.9.4
+KUBENS_VERSION=v0.9.4
 
 BUILD_DIR_CTX=$(mktemp -d)
 trap 'rm -rf ${BUILD_DIR_CTX}' EXIT
@@ -17,7 +17,7 @@ mv kubens kubectx /usr/bin && \
 rm -rf "${BUILD_DIR_CTX}"
 
 # Install k9s
-K9S_VERSION=v0.24.2
+K9S_VERSION=v0.24.15
 
 BUILD_DIR_K9S=$(mktemp -d)
 trap 'rm -rf ${BUILD_DIR_K9S}' EXIT

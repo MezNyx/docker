@@ -34,3 +34,10 @@ if [ ! -d /workspace/.cache/helm/repository ]; then
 fi
 
 
+# Set up tfenv
+tfenv install latest
+tfenv use latest
+
+# Set up tgenv
+tgenv install latest
+tgenv use latest

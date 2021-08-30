@@ -36,12 +36,22 @@ build {
   provisioner "shell" {
     script = "scripts/setup-user.sh"
   }
+  provisioner "shell" {
+    script = "scripts/install-tf-tools.sh"
+  }
   provisioner "file" {
     source = "files/configure.sh"
     destination = "/workspace/configure.sh"
   }
   provisioner "shell" {
-    inline = ["chown bastion:bastion /workspace/configure.sh", "chmod +x /workspace/configure.sh"]
+    inline = ["chmod +x /workspace/configure.sh"]
+  }
+  provisioner "file" {
+    source = "files/bashrc"
+    destination = "/workspace/.bashrc"
+  }
+  provisioner "shell" {
+    inline = ["chown -R bastion:bastion /workspace"]
   }
   post-processors {
     post-processor "docker-tag" {
