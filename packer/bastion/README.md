@@ -1,3 +1,19 @@
-# DEPRECATED Bastion
+Bastion:
+  * Oracle Linux 8
+  * Ubuntu 20.04
 
-I am no longer updating this and will remove it once i am sure I like the alpine version
+
+This is a bastion I have set up using packer which provides the following applications within
+* google-cloud-sdk
+* awscli
+* helm
+* kubectx
+* kbuens
+* kubeswtich
+* k9s
+* tfenv
+* tgenv
+* vault
+
+
+TODO: Soon I will be doing explicit versioning of these which will include getting rid of tfenv and tgenv and having a specific version of terraform and terragrunt.

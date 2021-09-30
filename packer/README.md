@@ -1,5 +1,5 @@
 # Packer
 
   * Bastion
-    * Alpine based
-    * DEPRECATED Ubuntu Based
+    * Oracle Linux 8
+    * Ubuntu Based 20.04
