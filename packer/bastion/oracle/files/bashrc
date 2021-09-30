@@ -6,3 +6,6 @@ export PATH="/workspace/.tgenv/bin:$PATH"
 
 # Set up prompt
 PS1="[\u \W]\\$ "
+
+# Set up kubeswitch
+source /usr/local/bin/switch.sh

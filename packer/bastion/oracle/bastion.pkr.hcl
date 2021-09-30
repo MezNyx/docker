@@ -6,7 +6,7 @@ source "docker" "bastion" {
     "USER bastion",
     "WORKDIR /workspace",
     "ENV HOSTNAME bastion",
-    "LABEL version=1.1",
+    "LABEL version=1.2",
     "ONBUILD RUN date",
     "ENTRYPOINT [\"/bin/bash\"]"
   ]
@@ -56,7 +56,7 @@ build {
   post-processors {
     post-processor "docker-tag" {
       repository = "meznyx/bastion"
-      tags = ["1.0-oracle", "oracle"]
+      tags = ["1.2-oracle", "oracle"]
     }
     post-processor "docker-push" {}
   

@@ -10,5 +10,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install -yq \
   apt-transport-https \
   ca-certificates \
   gnupg \
+  python3 \
+  python3-pip \
   vim-tiny
 apt-get clean
