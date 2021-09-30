@@ -6,7 +6,7 @@ source "docker" "bastion" {
     "USER bastion",
     "WORKDIR /workspace",
     "ENV HOSTNAME bastion",
-    "LABEL version=1.2",
+    "LABEL version=1.3",
     "ONBUILD RUN date",
     "ENTRYPOINT [\"/bin/bash\"]"
   ]
@@ -26,6 +26,9 @@ build {
   }
   provisioner "shell" {
     script = "scripts/install-kubernetes-toys.sh"
+  }
+  provisioner "shell" {
+    script = "scripts/install-vault.sh"
   }
   provisioner "shell" {
     script = "scripts/install-eks-tools.sh"
@@ -56,7 +59,7 @@ build {
   post-processors {
     post-processor "docker-tag" {
       repository = "meznyx/bastion"
-      tags = ["1.2-ubuntu", "ubuntu",  "latest"]
+      tags = ["1.3-ubuntu", "ubuntu",  "latest"]
     }
     post-processor "docker-push" {}
   
