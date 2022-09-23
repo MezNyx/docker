@@ -10,5 +10,6 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install -yq \
   google-cloud-sdk \
-  kubectl
+  kubectl \
+  google-cloud-sdk-gke-gcloud-auth-plugin
 apt-get clean
