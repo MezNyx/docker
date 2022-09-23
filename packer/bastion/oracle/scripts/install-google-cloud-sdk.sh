@@ -15,5 +15,6 @@ EOM
 # Install the software
 dnf install -yq \
   google-cloud-sdk \
-  kubectl
+  kubectl \
+  google-cloud-sdk-gke-gcloud-auth-plugin
 dnf clean all
